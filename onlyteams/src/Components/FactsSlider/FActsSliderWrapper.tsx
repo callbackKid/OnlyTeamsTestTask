@@ -1,13 +1,42 @@
 import styled from "styled-components";
 
-export const DatesFooterWrapper = styled.div`
+export const FactsSliderWrapper = styled.div`
   margin-top: 56px;
   margin-bottom: 104px;
   display: flex;
   justify-content: center;
+  background: #f4f5f9;
+
+  .swiper-button-prev {
+    postition: relative;
+    color: #3877ee;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: 0px 0px 15px rgba(56, 119, 238, 0.1);
+  }
+  .swiper-button-next {
+    color: #3877ee;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: 0px 0px 15px rgba(56, 119, 238, 0.1);
+  }
+  .swiper-button-prev::after {
+    font-size: 13px;
+    font-weight: bold;
+    width: 11px;
+  }
+  .swiper-button-next::after {
+    font-size: 13px;
+    font-weight: bold;
+    width: 6px;
+  }
 `;
 
-export const DatesWrapper = styled.section`
+export const FactsWrapper = styled.section`
   width: 320px;
   height: 135px;
   margin-left: 100px;
