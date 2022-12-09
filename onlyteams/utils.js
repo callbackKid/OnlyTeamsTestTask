@@ -1,8 +1,5 @@
 // Напишите функцию, которая определяет уникальны ли все символы в строке.
 //  Регистр должен учитываться: `‘a’` и `‘A’` разные символы.
-
-const { createIf } = require("typescript");
-
 const checkMyString = (str) => new Set(str).size === str.length;
 
 // Напишите функцию, которая принимает строку и возвращает новую, в которой все дублирующиеся символы будут удалены.
@@ -44,7 +41,32 @@ function arraySubset(source, subset) {
   return true;
 }
 
-console.log(arraySubset([2, 1, 3], [1, 2, 3])); // -> true
+// Напишите функцию, которая проверяет, являются ли все элементы в массиве анаграммами друг друга.
+function allAnagrams(array) {
+  const p = array[0].split("").sort().join("");
+  return array
+    .map((el) => el.split("").sort().join(""))
+    .every((el) => el === p);
+}
+// Необходимо вернуть индекс числа, если оно есть в массиве. Иначе вернуть - 1.
+function search(array, target) {
+  return array.includes(target) ? array.indexOf(target) : -1;
+}
+
+// Напишите функцию, которая проверит строку на сбалансированность скобок: {}, (), [].
+//Вернуть true если они сбалансированы, иначе false.
+
+function isBalanced(string) {
+  let count = 0;
+  const a = "{([";
+  const b = "})]";
+
+  string.split("").forEach((el) => {
+    if (a.includes(el)) count++;
+    if (b.includes(el)) count--;
+  });
+  return count % 2 === 0;
+}
 
 // Напишите функцию, принимающая массив с вложенными массивами
 // и распакуйте в результирующий плоский массов.В результате должны получить новый одномерный массив.
@@ -58,12 +80,3 @@ function flatten(array) {
   }
   return array;
 }
-
-// Напишите функцию, которая проверяет, являются ли все элементы в массиве анаграммами друг друга.
-
-function allAnagrams(array) {
-  // todo
-}
-
-console.log(allAnagrams(["abcd", "bdac", "cabd"])); // true
-console.log(allAnagrams(["abcd", "bdXc", "cabd"])); // false
