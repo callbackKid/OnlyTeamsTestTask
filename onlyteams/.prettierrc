@@ -3,6 +3,7 @@
   "plugins": ["prettier"],
   "rules": {
     "prettier/prettier": "error",
+    "parser": "babylon",
     "no-unused-vars": "warn",
     "no-console": "off",
     "func-names": "off",
