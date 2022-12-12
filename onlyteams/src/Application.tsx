@@ -1,4 +1,5 @@
-import { useReducer } from "react";
+import { useContext, useReducer } from "react";
+import { ThemeContext } from "./theme";
 
 type StateType = {
   count: number;
@@ -35,13 +36,13 @@ const reducer = (state: StateType, action: ActionType) => {
 
 const Counter = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
-
+  const theme = useContext(ThemeContext);
   const reset = () => dispatch({ type: "RESET", payload: 0 });
   const increase = () => dispatch({ type: "INCREASE" });
   const decrease = () => dispatch({ type: "DECREASE" });
 
   return (
-    <main className="Counter">
+    <main className="Counter" style={{ ...theme.light }}>
       <h1>Days Since Last Incident</h1>
       <p className="count">{state.count}</p>
       <section className="controls">

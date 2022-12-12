@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import "./App.css";
 import Application from "./Application";
 import { DatesSlider } from "./Components/DatesSlider.tsx/DatesSlider";
