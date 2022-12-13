@@ -1,11 +1,10 @@
 import { useEffect } from "react";
 import "./App.css";
 import Application from "./Application";
-import { DatesSlider } from "./Components/DatesSlider.tsx/DatesSlider";
-import { Dates } from "./Components/FactsSlider/FactsSlider";
-import { Title } from "./Components/Title/Title";
+import { RGBComp } from "./Components/RGBS COMP";
+import { InputProps } from "./Components/RGBS COMP/input";
 
-function App(props: any) {
+function App({ id, label, value }: InputProps) {
   // const [data, setData] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -19,9 +18,7 @@ function App(props: any) {
   return (
     <div className="App">
       <Application />
-      <Title />
-      <DatesSlider date1={"2015"} date2={"2022"} />
-      <Dates children={props.children} />
+      <RGBComp />
     </div>
   );
 }
