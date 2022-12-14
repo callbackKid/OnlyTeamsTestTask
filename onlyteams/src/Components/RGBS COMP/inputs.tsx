@@ -1,8 +1,10 @@
 import { InputRGB } from "./input";
-import { RgbColorType } from "./sliders";
 import { InputWrapper } from "./Wrappers";
+import { ContextRGB } from "./context";
+import { useContext } from "react";
 
-export const InputsRGB = ({ red, green, blue }: RgbColorType) => {
+export const InputsRGB = () => {
+  const { red, green, blue, dispatch } = useContext(ContextRGB);
   return (
     <InputWrapper>
       <InputRGB id="red" label="red" value={red}></InputRGB>

@@ -1,8 +1,4 @@
-type SliderProps = {
-  id: string;
-  value: number;
-  label: string;
-};
+import { SliderProps } from "./types";
 
 export const SliderRGB = ({ id, value, label }: SliderProps) => {
   return (

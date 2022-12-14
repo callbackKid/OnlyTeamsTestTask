@@ -4,7 +4,7 @@ type stateType = {
   green: number;
 };
 
-type ActionType = {
+export type ActionType = {
   type: "ADJUST_RED" | "ADJUST_BLUE" | "ADJUST_GREEN";
   payload: number;
 };

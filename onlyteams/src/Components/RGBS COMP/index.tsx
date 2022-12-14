@@ -1,10 +1,16 @@
-import { RgbColorType, SlidersRGB } from "./sliders";
+import { useReducer } from "react";
+
+import { SlidersRGB } from "./sliders";
 import { InputsRGB } from "./inputs";
 import { ColorsSwatch } from "./ColorsSwatch";
-import { useReducer } from "react";
+
 import { reducer } from "./reducer";
+import { RgbColorType } from "./types";
+import React from "react";
+import { ThemeContext } from "../../theme";
 
 export const RGBComp = ({ red, green, blue }: RgbColorType) => {
+  const themes = React.useContext(ThemeContext);
   const [rgb, dispatch] = useReducer(reducer, {
     red: 0,
     green: 0,
@@ -12,10 +18,9 @@ export const RGBComp = ({ red, green, blue }: RgbColorType) => {
   });
 
   return (
-    <div>
+    <div style={{ ...themes.dark }}>
       <ColorsSwatch {...rgb} />
-      <InputsRGB {...rgb} />
-      <SlidersRGB {...rgb} />
+      <SlidersRGB />
     </div>
   );
 };

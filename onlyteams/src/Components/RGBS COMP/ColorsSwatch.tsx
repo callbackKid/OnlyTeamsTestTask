@@ -1,4 +1,4 @@
-import { RgbColorType } from "./sliders";
+import { RgbColorType } from "./types";
 
 export const ColorsSwatch = ({ red, green, blue }: RgbColorType) => {
   return (
