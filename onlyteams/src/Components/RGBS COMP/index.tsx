@@ -1,16 +1,17 @@
-import { SlidersRGB } from "./sliders";
 import { ColorsSwatch } from "./ColorsSwatch";
 import React from "react";
 import { ThemeContext } from "../../theme";
-import { InputsRGB } from "./inputs";
+import { ColorAdjustment } from "./inputs";
+import { InputRGB } from "./input";
+import { SliderRGB } from "./slider";
 
 export const App = () => {
   const themes = React.useContext(ThemeContext);
   return (
     <div style={{ ...themes.dark }}>
-      <InputsRGB />
       <ColorsSwatch />
-      <SlidersRGB />
+      <ColorAdjustment Adjustment={InputRGB} />
+      <ColorAdjustment Adjustment={SliderRGB} />
     </div>
   );
 };

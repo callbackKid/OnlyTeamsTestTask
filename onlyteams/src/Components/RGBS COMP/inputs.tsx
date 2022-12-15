@@ -2,8 +2,13 @@ import { InputRGB } from "./input";
 import { InputWrapper } from "./Wrappers";
 import { ContextRGB } from "./context";
 import { ChangeEvent, useContext } from "react";
+import { InputProps } from "./types";
 
-export const InputsRGB = () => {
+export interface ColorAdjustmentProps {
+  Adjustment: React.ComponentType<InputProps>;
+}
+
+export const ColorAdjustment = ({ Adjustment }: ColorAdjustmentProps) => {
   const { red, green, blue, dispatch } = useContext(ContextRGB);
   const adjustRed = (event: ChangeEvent<HTMLInputElement>) =>
     dispatch({
@@ -23,24 +28,14 @@ export const InputsRGB = () => {
 
   return (
     <InputWrapper>
-      <InputRGB
-        id="red"
-        label="red"
-        value={red}
-        onChange={adjustRed}
-      ></InputRGB>
-      <InputRGB
+      <Adjustment id="red" label="red" value={red} onChange={adjustRed} />
+      <Adjustment
         id="green"
         label="green"
         value={green}
         onChange={adjustGreen}
-      ></InputRGB>
-      <InputRGB
-        id="blue"
-        label="blue"
-        value={blue}
-        onChange={adjustBlue}
-      ></InputRGB>
+      />
+      <Adjustment id="blue" label="blue" value={blue} onChange={adjustBlue} />
     </InputWrapper>
   );
 };
