@@ -1,7 +1,16 @@
-import { RgbColorType } from "./types";
+import { useContext } from "react";
+import { ContextRGB } from "./context";
 
-export const ColorsSwatch = ({ red, green, blue }: RgbColorType) => {
+export const ColorsSwatch = () => {
+  const { red, green, blue } = useContext(ContextRGB);
   return (
-    <div style={{ backgroundColor: `rgb(${red}, ${green}, ${blue})` }}> </div>
+    <div
+      style={{
+        width: 400,
+        height: 400,
+        margin: "auto",
+        backgroundColor: `rgb(${red}, ${green}, ${blue})`,
+      }}
+    ></div>
   );
 };

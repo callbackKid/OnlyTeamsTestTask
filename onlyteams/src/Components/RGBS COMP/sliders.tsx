@@ -30,12 +30,14 @@ export const SlidersRGB = () => {
         value={red}
         onChange={adjustRed}
       ></SliderRGB>
+
       <SliderRGB
         id="green"
         label="green"
         value={green}
         onChange={adjustGreen}
       ></SliderRGB>
+
       <SliderRGB
         id="blue"
         label="blue"
