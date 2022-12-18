@@ -19,3 +19,8 @@ export type InputProps = {
   label: string;
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 };
+
+export type Link<T> = {
+  value: T;
+  next: Link<T>;
+};
